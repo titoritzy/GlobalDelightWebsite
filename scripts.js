@@ -27,7 +27,7 @@ function updateTotalPrice() {
 
 // Reservation Form Submission
 const reservationForm = document.getElementById('reservation-form');
-reservationForm.addEventListener('submit', function(e) {
+reservationForm.addEventListener('submit', function (e) {
     e.preventDefault();
     alert('Reservation made successfully!');
     reservationForm.reset();
@@ -37,7 +37,7 @@ reservationForm.addEventListener('submit', function(e) {
 const reviewForm = document.getElementById('review-form');
 const reviewList = document.getElementById('review-list');
 
-reviewForm.addEventListener('submit', function(e) {
+reviewForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const name = document.getElementById('review-name').value;
@@ -55,3 +55,22 @@ reviewForm.addEventListener('submit', function(e) {
 
     reviewForm.reset();
 });
+// Function to add bill
+function addBill() {
+    // Get the item price and quantity entered by the user
+    const price = parseFloat(document.getElementById("itemPrice").value);
+    const quantity = parseInt(document.getElementById("itemQuantity").value);
+
+    // Check if the input values are valid
+    if (!isNaN(price) && !isNaN(quantity) && price >= 0 && quantity > 0) {
+        // Calculate the total cost
+        const totalCost = price * quantity;
+
+        // Update the bill summary with the calculated total
+        document.getElementById("total").textContent = totalCost.toFixed(2);
+    } else {
+        // Alert the user if the input is invalid
+        alert("Please enter valid price and quantity.");
+    }
+}
+

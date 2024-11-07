@@ -56,7 +56,7 @@
                             <p class="price">$12.99</p>
                           </div>
                         </div>
-                  
+
                         <div class="menu-item">
                           <img src="images/banana.jpg" alt="Banana Split">
                           <div class="menu-info">
@@ -65,7 +65,7 @@
                             <p class="price">$8.50</p>
                           </div>
                         </div>
-                  
+
                         <div class="menu-item">
                           <img src="images/salmon.jpg" alt="Salmon Fillet">
                           <div class="menu-info">
@@ -83,11 +83,10 @@
                               <p class="price">$30.99</p>
                             </div>
                           </div>
-                        
+
                       </div>
                     </div>
                   </section>
-                  
                 <!-- Add the remaining items in the same pattern... -->
             </div>
         </div>
@@ -213,10 +212,10 @@
                 <label for="res-time">Time:</label>
                 <input type="time" id="res-time" name="res-time" required>
 
-                <label for="res-people">Number of People:</label>
-                <input type="number" id="res-people" name="res-people" required>
+                <label for="res-party-size">Party Size:</label>
+                <input type="number" id="res-party-size" name="res-party-size" required>
 
-                <button type="submit" class="btn">Reserve Now</button>
+                <button type="submit" class="btn">Reserve Table</button>
             </form>
         </div>
     </section>
@@ -225,29 +224,40 @@
     <section id="reviews" class="section dark-bg">
         <div class="container">
             <h2>Customer Reviews</h2>
-            <form id="review-form">
-                <label for="review-name">Name:</label>
-                <input type="text" id="review-name" name="review-name" required>
-
-                <label for="rating">Rating (1-5):</label>
-                <input type="number" id="rating" name="rating" min="1" max="5" required>
-
-                <label for="review-text">Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
-
-                <button type="submit" class="btn">Submit Review</button>
-            </form>
-
-            <div id="review-list"></div>
+            <div class="reviews-grid">
+                <div class="review-item">
+                    <p>"The best dining experience! The food was absolutely divine!" - Alex J.</p>
+                </div>
+                <div class="review-item">
+                    <p>"The flavors are so unique and delicious. Highly recommend!" - Maria K.</p>
+                </div>
+                <div class="review-item">
+                    <p>"Exceptional service and exquisite dishes. Definitely coming back!" - John L.</p>
+                </div>
+            </div>
         </div>
     </section>
+    <h2>Billing system</h2>
+<div class="order-section">
+        <label for="itemPrice">Price per Item:</label>
+        <input type="number" id="itemPrice" placeholder="Enter item price" min="0" step="0.01">
+
+        <label for="itemQuantity">Quantity:</label>
+        <input type="number" id="itemQuantity" placeholder="Enter quantity" min="1">
+
+        <button onclick="addBill()">Add Bill</button>
+    </div>
+
+
+        <h3>Bill Summary</h3>
+        <p>Total: $<span id="total">0.00</span></p>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Global Delights. All Rights Reserved.</p>
+            <p>&copy; 2024 Global Delights | All Rights Reserved</p>
         </div>
     </footer>
-
 </body>
 </html>
